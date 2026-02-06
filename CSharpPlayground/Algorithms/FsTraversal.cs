@@ -1,63 +1,63 @@
 /**
- * BFS (Breadth-First Search - Búsqueda en Anchura)
+ * BFS (Breadth-First Search)
  *
- * Este algoritmo recorre una estructura jerárquica (en este caso, el sistema
- * de archivos) explorando los nodos por niveles, no por profundidad.
+ * This algorithm traverses a hierarchical structure (in this case, the file
+ * system) by exploring nodes level by level, not by depth.
  *
- * La idea central de BFS es:
- * - Descubrir primero todos los elementos del nivel actual
- * - Marcar cada elemento como procesado
- * - Recién después avanzar a los niveles siguientes
+ * The core idea of BFS is:
+ * - Discover all elements of the current level first
+ * - Mark each element as processed
+ * - Only then advance to the next levels
  *
- * En esta implementación:
- * - Cada directorio descubierto se registra con un estado (Pending / Processed)
- * - Los directorios nuevos se agregan como Pending
- * - En cada iteración se toma un único directorio Pending
- * - Ese directorio se explora, se registran sus subdirectorios
- * - Luego se marca como Processed
+ * In this implementation:
+ * - Each discovered directory is registered with a state (Pending / Processed)
+ * - New directories are added as Pending
+ * - Each iteration takes a single Pending directory
+ * - That directory is explored and its subdirectories are registered
+ * - Then it is marked as Processed
  *
- * El algoritmo finaliza cuando no existen más directorios en estado Pending.
+ * The algorithm ends when there are no more Pending directories.
  *
- * Este comportamiento corresponde a BFS porque:
- * - No se desciende inmediatamente en una rama profunda
- * - Los directorios se procesan en el orden en que fueron descubiertos
- * - El control del recorrido se basa en un conjunto de nodos pendientes,
- *   no en llamadas recursivas ni en una pila (Stack)
+ * This behavior matches BFS because:
+ * - It does not immediately descend into a deep branch
+ * - Directories are processed in the order they were discovered
+ * - Traversal control is based on a set of pending nodes,
+ *   not on recursion or a stack (Stack)
  *
- * BFS es adecuado para:
- * - Escaneo completo de estructuras jerárquicas
- * - Procesamiento por capas o niveles
- * - Evitar profundización excesiva (stack overflow)
- * - Tener control explícito del estado del recorrido
+ * BFS is suitable for:
+ * - Full scans of hierarchical structures
+ * - Processing by layers or levels
+ * - Avoiding excessive depth (stack overflow)
+ * - Explicit control of traversal state
  */
 
- /**
- * DFS (Depth-First Search - Búsqueda en Profundidad)
+/**
+ * DFS (Depth-First Search)
  *
- * Este algoritmo recorre una estructura jerárquica (en este caso, el sistema
- * de archivos) explorando los nodos en profundidad antes de continuar con otras ramas.
+ * This algorithm traverses a hierarchical structure (in this case, the file
+ * system) by exploring nodes in depth before continuing with other branches.
  *
- * La idea central de DFS es:
- * - Explorar una rama completa antes de continuar con otras ramas
- * - Descender en subdirectorios hasta que no existan más
- * - Retroceder automáticamente para continuar el recorrido
+ * The core idea of DFS is:
+ * - Explore a full branch before moving to other branches
+ * - Descend into subdirectories until none remain
+ * - Backtrack automatically to continue the traversal
  *
- * En esta implementación:
- * - Se utiliza una pila (Stack) para almacenar los directorios pendientes
- * - Cada iteración toma el último directorio agregado al Stack
- * - Se exploran sus subdirectorios y se agregan nuevamente al Stack
+ * In this implementation:
+ * - A stack is used to store pending directories
+ * - Each iteration takes the last directory added to the stack
+ * - Its subdirectories are explored and pushed back onto the stack
  *
- * El algoritmo finaliza cuando el Stack queda vacío.
+ * The algorithm ends when the stack is empty.
  *
- * Este comportamiento corresponde a DFS porque:
- * - El recorrido prioriza profundidad sobre niveles
- * - Se realiza backtracking automático mediante la pila
- * - No depende de recursión, sino de una pila explícita
+ * This behavior matches DFS because:
+ * - The traversal prioritizes depth over levels
+ * - Backtracking is performed automatically via the stack
+ * - It does not rely on recursion, but on an explicit stack
  *
- * DFS es adecuado para:
- * - Procesamiento completo de estructuras jerárquicas por rama
- * - Migraciones o ETL donde se desea procesar una carpeta completa antes de continuar
- * - Escenarios donde se busca minimizar estado global simultáneo
+ * DFS is suitable for:
+ * - Full processing of hierarchical structures per branch
+ * - Migrations or ETL where you want to process a whole folder before continuing
+ * - Scenarios where you want to minimize simultaneous global state
  */
 
 namespace CSharpPlayground.Algorithms
@@ -125,7 +125,7 @@ namespace CSharpPlayground.Algorithms
             {
                 string currentPath = menuStack.Pop();
 
-                // Aquí normalmente se procesaría la carpeta actual
+                // Normally you would process the current folder here
                 // Ej: Console.WriteLine(currentPath);
 
                 var subDirectories = Explorer(currentPath);
