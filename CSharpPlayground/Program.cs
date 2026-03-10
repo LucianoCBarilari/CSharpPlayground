@@ -1,58 +1,117 @@
-using CSharpPlayground.Others;
-namespace CSharpPlayground
+using CSharpPlayground.Slices.Algorithms;
+using CSharpPlayground.Slices.Exercises;
+using CSharpPlayground.Slices.LanguageFeatures;
+using CSharpPlayground.Slices.Patterns;
+using CSharpPlayground.Slices.StudentGrades;
+using CSharpPlayground.Slices.TestingDojo;
+
+namespace CSharpPlayground;
+
+internal static class Program
 {
-    class Program
-    {
-        static void Main(string[] args)
+    private static readonly Dictionary<string, Action> SliceRunners =
+        new(StringComparer.OrdinalIgnoreCase)
         {
-            // The following code demonstrates the use of extension methods defined in the Extensions class.
-            int[] ints = new[] { 1, 2, 3, 4, 5, 6 };
-            Console.WriteLine(ints.Csv);
-            ints.GetEven().ToList().ForEach(i => Console.WriteLine(i));
-            ints.GetOdd().ToList().ForEach(i => Console.WriteLine(i));
+            ["language"] = LanguageFeaturesRunner.Run,
+            ["patterns"] = PatternsRunner.Run,
+            ["algorithms"] = AlgorithmsRunner.Run,
+            ["exercises"] = ExercisesRunner.Run,
+            ["grades"] = StudentGradesRunner.Run,
+            ["testing"] = TestingDojoRunner.Run
+        };
 
-            // The following code will not compile because of the nullability of the Name property in the Person class.
-            var p = new Person();
-            p.Name ="null";
+    private static void Main(string[] args)
+    {
+        if (args.Length > 0)
+        {
+            RunSlice(args[0]);
+        }
 
-            //nameof operator can be used to get the name of a type, method, property, etc. as a string.
-            var x = nameof(IEnumerable<>);
-            Console.WriteLine(x);
+        while (true)
+        {
+            ShowMenu();
+            Console.Write("Select an option (name/number, 0 to exit): ");
 
-            // The following code demonstrates the use of a delegate to convert an array of integers to a CSV string.
-            //and new delegate in dotnet 10.0
-            var e = new DelegateExample();            
-            var ints2 = new[] { 7, 8, 9, 10 };
-            string result;
-            e.ConvertToCsv(ints2, out result);
-            Console.WriteLine(result);
+            var input = Console.ReadLine()?.Trim();
 
-            var person = new PersonOperator(30, "John");
-            Console.WriteLine(person);
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine("Please enter a valid option.");
+                ContinuePrompt();
+                continue;
+            }
 
-            person += 5;
-            Console.WriteLine(person);
+            if (input == "0")
+            {
+                Console.WriteLine("Exiting...");
+                break;
+            }
+
+            if (int.TryParse(input, out var optionIndex))
+            {
+                var sliceName = GetSliceNameByIndex(optionIndex);
+                if (sliceName is null)
+                {
+                    Console.WriteLine("Invalid option number.");
+                    ContinuePrompt();
+                    continue;
+                }
+
+                RunSlice(sliceName);
+                ContinuePrompt();
+                continue;
+            }
+
+            RunSlice(input);
+            ContinuePrompt();
         }
     }
-    class PersonOperator 
+
+    private static void RunSlice(string requestedSlice)
     {
-        public int Age { get; set; }
-        public string Name { get; set; }
-        public PersonOperator(int age, string name)
+        if (!SliceRunners.TryGetValue(requestedSlice, out var runSlice))
         {
-            Age = age;
-            Name = name;
+            Console.WriteLine($"Unknown slice '{requestedSlice}'.");
+            Console.WriteLine(
+                $"Available slices: {string.Join(", ", SliceRunners.Keys)}"
+            );
+            return;
         }
 
-        public override string ToString()
-        {
-            return $"{Name} - {Age}";
-        }
-
-        public static PersonOperator operator +(PersonOperator p1, int age)
-        {
-            return new PersonOperator(p1.Age + age, p1.Name);
-        }   
+        Console.WriteLine();
+        Console.WriteLine($"Running slice: {requestedSlice}");
+        runSlice();
     }
-        
+
+    private static void ShowMenu()
+    {
+        Console.Clear();
+        Console.WriteLine("=== CSharp Playground ===");
+        Console.WriteLine("Available slices:");
+
+        var index = 1;
+        foreach (var key in SliceRunners.Keys)
+        {
+            Console.WriteLine($"{index}. {key}");
+            index++;
+        }
+
+        Console.WriteLine("0. exit");
+        Console.WriteLine();
+    }
+
+    private static string? GetSliceNameByIndex(int optionIndex)
+    {
+        if (optionIndex < 1 || optionIndex > SliceRunners.Count)
+            return null;
+
+        return SliceRunners.Keys.ElementAt(optionIndex - 1);
+    }
+
+    private static void ContinuePrompt()
+    {
+        Console.WriteLine();
+        Console.Write("Press Enter to continue...");
+        Console.ReadLine();
+    }
 }
