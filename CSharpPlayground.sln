@@ -4,6 +4,8 @@ VisualStudioVersion = 18.2.11430.68
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPlayground", "CSharpPlayground\CSharpPlayground.csproj", "{54526E9C-4D8F-770F-64DE-7C05CB0DBDF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPlayground.Tests", "tests\CSharpPlayground.Tests\CSharpPlayground.Tests.csproj", "{7E7A5A2A-5F37-4E5A-B826-0F94DDFBEA78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{54526E9C-4D8F-770F-64DE-7C05CB0DBDF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54526E9C-4D8F-770F-64DE-7C05CB0DBDF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54526E9C-4D8F-770F-64DE-7C05CB0DBDF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E7A5A2A-5F37-4E5A-B826-0F94DDFBEA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7A5A2A-5F37-4E5A-B826-0F94DDFBEA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7A5A2A-5F37-4E5A-B826-0F94DDFBEA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7A5A2A-5F37-4E5A-B826-0F94DDFBEA78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

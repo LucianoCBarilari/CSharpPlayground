@@ -1,6 +1,8 @@
 # Build outputs
 bin/
 obj/
+tests/**/bin/
+tests/**/obj/
 
 # User-specific files
 *.user
@@ -21,3 +23,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# .NET Tools and User-level cache
+.dotnet/
+TestResults/
+**/TestResults/
