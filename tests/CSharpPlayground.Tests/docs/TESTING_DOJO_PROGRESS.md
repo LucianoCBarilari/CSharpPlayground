@@ -7,37 +7,39 @@
 
 ## Level 2
 - [x] ValidationChallenge.IsValidUsername
-- [ ] ValidationChallenge.ValidateOrder
-- [ ] ValidationChallenge.IsSecurePassword
+- [x] ValidationChallenge.ValidateOrder
+- [x] ValidationChallenge.IsSecurePassword
 
 ## Level 3
-- CollectionChallenge.GetEvenNumbers
-- CollectionChallenge.TopScores
-- CollectionChallenge.GroupByPassStatus
+- [x] CollectionChallenge.CalculateAverageScore
+- [x] CollectionChallenge.GetActiveUsernames
+- [x] CollectionChallenge.HasDuplicateIds
 
 ## Level 4
-- TextDateChallenge.Slugify
-- TextDateChallenge.NextBusinessDay
-- GreetingService.BuildGreeting
+- [x] TextDateChallenge.Slugify
+- [ ] TextDateChallenge.NextBusinessDay
+- [x] GreetingService.BuildGreeting
 
 ## Level 5
-- CartService.AddItem
-- CartService.RemoveItem
-- CartService.ApplyPercentDiscount
-- CartService.GetSubtotal / CartService.GetTotal
+- [x] CartService.AddItem
+- [x] CartService.RemoveItem
+- [x] CartService.ApplyPercentDiscount
+- [x] CartService.GetSubtotal
+- [ ] CartService.GetTotal
+- [ ] CartService.Clear
 
 ## Level 6
-- InvoiceNotifier.NotifyOverdueInvoices
+- [ ] InvoiceNotifier.NotifyOverdueInvoices
 - verify interaction count and arguments on collaborators
 
 ## Level 7
-- ReportAssembler.BuildCourseReport
+- [ ] ReportAssembler.BuildCourseReport
 - focus on object graph assertions and collection ordering
 
 ## Level 8
-- StudentService.EnrollAsync
-- StudentService.AssignGradeAsync
+- [ ] StudentService.EnrollAsync
+- [ ] StudentService.AssignGradeAsync
 
 ## Level 9
-- StudentQueries.GetHonorRoll
+- [ ] StudentQueries.GetHonorRoll
 - later run against EF Core provider when packages are added

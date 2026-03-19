@@ -9,7 +9,7 @@ public class CartServiceShould
     public void CartServices_ShouldSucced_AddingItem() 
     {
 
-        CartService cartService = new CartService();
+        CartService cartService = new();
 
         cartService.AddItem("prod01", 1, 10);
 
@@ -29,7 +29,7 @@ public class CartServiceShould
       decimal unitPrice,
       Type exceptionType)
     {
-        var cartService = new CartService();
+        CartService cartService = new();
 
         var action = () => cartService.AddItem(sku, quantity, unitPrice);
 

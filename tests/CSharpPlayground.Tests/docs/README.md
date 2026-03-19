@@ -1,10 +1,20 @@
 # Testing Dojo Test Workspace
 
-Use this folder for all tests related to the `TestingDojo` slice.
+This `docs/` folder contains documentation for the `TestingDojo` test workspace.
+
+All `TestingDojo` test files currently live in the root of `tests/CSharpPlayground.Tests/`, not inside `docs/`.
 
 ## Documents
 - `docs/TUTOR_GUIDELINES.md`: tutor role, response limits, and coaching rules.
 - `docs/TESTING_DOJO_PROGRESS.md`: exercise progress by level.
+
+## Current test files
+- `../BasicsChallengeShould.cs`
+- `../ValidationChallengeShould.cs`
+- `../CollectionChallengeShould.cs`
+- `../TextDateChallengeShould.cs`
+- `../GreetingServiceShould.cs`
+- `../CartServiceShould.cs`
 
 ## Naming
 - Test file: `<ClassUnderTest>Tests.cs` or `<ClassUnderTest>Should.cs`
@@ -16,11 +26,6 @@ Use this folder for all tests related to the `TestingDojo` slice.
 - Invalid input covered.
 - Deterministic behavior (no real clock/network/filesystem unless intentional).
 
-## Suggested organization
-- `Basics/`
-- `Validation/`
-- `TheoryData/`
-- `Mocks/`
-- `FluentAssertions/`
-- `Repository/`
-- `EfCoreIntegration/`
+## Notes
+- Keep `docs/` for tutor rules, progress tracking, and workshop guidance.
+- Keep exercise tests at the project root unless the suite grows enough to justify subfolders.
