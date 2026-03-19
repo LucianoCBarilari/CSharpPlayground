@@ -25,3 +25,4 @@ Thumbs.db
 # .NET Tools and User-level cache
 .dotnet/
 .dotnet /
+/TestResults
