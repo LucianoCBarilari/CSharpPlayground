@@ -1,14 +1,13 @@
-# Testing Dojo - Test Workspace
+# Testing Dojo Test Workspace
 
 Use this folder for all tests related to the `TestingDojo` slice.
 
-## Regla de Oro del Tutor
-- **No resultados:** El tutor nunca proporcionará el código final ni las respuestas directas.
-- **Acompañamiento:** El tutor actuará como guía, señalando conceptos, trampas lógicas y mejores prácticas.
-- **Aprendizaje Activo:** El estudiante es el único responsable de escribir y validar el código para asegurar la asimilación de conceptos.
+## Documents
+- `docs/TUTOR_GUIDELINES.md`: tutor role, response limits, and coaching rules.
+- `docs/TESTING_DOJO_PROGRESS.md`: exercise progress by level.
 
 ## Naming
-- Test file: `<ClassUnderTest>Tests.cs`
+- Test file: `<ClassUnderTest>Tests.cs` or `<ClassUnderTest>Should.cs`
 - Test method: `MethodName_Scenario_ExpectedBehavior`
 
 ## Minimum checklist per exercise

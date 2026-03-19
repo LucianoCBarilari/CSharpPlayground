@@ -1,31 +1,19 @@
+using System.Linq;
+
 namespace CSharpPlayground.Slices.TestingDojo.Level03Collections;
 
 /// <summary>
 /// Nivel 03: Gestión de Datos.
 /// Listas, promedios y filtrado manual (sin abusar de lambdas complejas).
 /// </summary>
-public sealed class CollectionChallenge
+public class CollectionChallenge
 {
-    // Calcular el promedio de una lista de notas, ignorando los ceros (ausentes).
+    // Calcular el promedio de una lista de notas (incluyendo los ceros).
     public double CalculateAverageScore(List<int> scores)
     {
-        if (scores == null || scores.Count == 0) return 0;
+        if (scores == null || !scores.Any()) return 0;
 
-        double sum = 0;
-        int count = 0;
-
-        foreach (int score in scores)
-        {
-            if (score > 0)
-            {
-                sum += score;
-                count++;
-            }
-        }
-
-        if (count == 0) return 0;
-
-        return sum / count;
+        return scores.Average();
     }
 
     // Buscar usuarios activos en una lista (Lógica procedimental clara).
@@ -47,7 +35,7 @@ public sealed class CollectionChallenge
     }
 
     // Detectar si hay duplicados en una lista de IDs.
-    public bool HasDuplicateIds(List<int> ids)
+    public bool HasDuplicateIds(List<int>? ids)
     {
         if (ids == null || ids.Count <= 1) return false;
 
@@ -62,4 +50,8 @@ public sealed class CollectionChallenge
     }
 }
 
-public sealed record UserAccount(string Username, bool IsActive);
+public class UserAccount 
+{
+    public string Username { get; set; } = string.Empty;
+    public bool IsActive { get; set; }
+} 

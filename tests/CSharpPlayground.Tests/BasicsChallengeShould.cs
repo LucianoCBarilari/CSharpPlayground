@@ -1,7 +1,7 @@
 using CSharpPlayground.Slices.TestingDojo.Level01Basics;
 using Xunit;
 
-namespace CSharpPlayground.Tests.Slices.TestingDojo;
+namespace CSharpPlayground.Tests;
 public class BasicsChallengeShould
 {
     [Theory]

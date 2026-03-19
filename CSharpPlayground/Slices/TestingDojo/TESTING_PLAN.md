@@ -2,6 +2,11 @@
 
 This slice is for QA-focused unit testing practice with progressive complexity.
 
+## Workspace docs
+- Test workspace overview: `tests/CSharpPlayground.Tests/Slices/TestingDojo/README.md`
+- Tutor guidance: `tests/CSharpPlayground.Tests/Slices/TestingDojo/docs/TUTOR_GUIDELINES.md`
+- Exercise progress tracker: `tests/CSharpPlayground.Tests/Slices/TestingDojo/docs/TESTING_DOJO_PROGRESS.md`
+
 ## Rules of the game
 - Keep production code minimal and explicit.
 - Keep tests readable with clear naming.

@@ -1,6 +1,6 @@
 namespace CSharpPlayground.Slices.TestingDojo.Level05Stateful;
 
-public sealed class CartService
+public class CartService
 {
     private readonly Dictionary<string, CartLine> lines = new(StringComparer.OrdinalIgnoreCase);
     private decimal discountRate;

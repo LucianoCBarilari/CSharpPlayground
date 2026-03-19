@@ -2,7 +2,7 @@ using System.Text;
 
 namespace CSharpPlayground.Slices.TestingDojo.Level04TextDate;
 
-public sealed class TextDateChallenge
+public class TextDateChallenge
 {
     public string Slugify(string input)
     {

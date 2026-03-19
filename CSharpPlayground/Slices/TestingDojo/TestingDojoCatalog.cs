@@ -4,12 +4,12 @@ public static class TestingDojoCatalog
 {
     public static IReadOnlyList<TestingExercise> Exercises { get; } =
     [
-        new(1, "BasicsChallenge.AreEqual", "Compares two numbers for equality."),
-        new(1, "BasicsChallenge.IsEven", "Checks if a number is even."),
-        new(1, "BasicsChallenge.MaxOfTwo", "Returns the larger value."),
-        new(2, "ValidationChallenge.NormalizeEmail", "Normalizes and validates email text."),
-        new(2, "ValidationChallenge.EnsureAgeWithinRange", "Guards age boundaries."),
-        new(2, "ValidationChallenge.CalculateDiscountRate", "Business rule with guard clauses."),
+        new(1, "BasicsChallenge.CalculateDiscount", "Calculates discounts based on VIP status and price."),
+        new(1, "BasicsChallenge.IsLeapYear", "Checks if a year is a leap year with classic rules."),
+        new(1, "BasicsChallenge.CelsiusToFahrenheit", "Converts temperature with precision check."),
+        new(2, "ValidationChallenge.IsValidUsername", "Validates length and character constraints."),
+        new(2, "ValidationChallenge.ValidateOrder", "Validates order limits and throws exceptions."),
+        new(2, "ValidationChallenge.IsSecurePassword", "Checks password strength (case, digits, length)."),
         new(3, "CollectionChallenge.GetEvenNumbers", "Filters with deterministic ordering."),
         new(3, "CollectionChallenge.TopScores", "Sorts and limits a score list."),
         new(3, "CollectionChallenge.GroupByPassStatus", "Partitions scores by threshold."),

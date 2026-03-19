@@ -5,12 +5,12 @@ public interface IClock
     DateTime UtcNow { get; }
 }
 
-public sealed class SystemClock : IClock
+public class SystemClock : IClock
 {
     public DateTime UtcNow => DateTime.UtcNow;
 }
 
-public sealed class GreetingService(IClock clock)
+public class GreetingService(IClock clock)
 {
     public string BuildGreeting(string userName)
     {
