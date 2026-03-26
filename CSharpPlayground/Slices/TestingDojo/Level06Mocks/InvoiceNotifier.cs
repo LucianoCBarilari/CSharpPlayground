@@ -10,7 +10,7 @@ public interface IAuditSink
     void Write(string message);
 }
 
-public sealed class InvoiceNotifier(
+public class InvoiceNotifier(
     INotificationGateway notificationGateway,
     IAuditSink auditSink,
     DateOnly today

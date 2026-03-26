@@ -15,6 +15,7 @@ All `TestingDojo` test files currently live in the root of `tests/CSharpPlaygrou
 - `../TextDateChallengeShould.cs`
 - `../GreetingServiceShould.cs`
 - `../CartServiceShould.cs`
+- `../InvoiceNotifierShould.cs`
 
 ## Naming
 - Test file: `<ClassUnderTest>Tests.cs` or `<ClassUnderTest>Should.cs`
@@ -29,3 +30,18 @@ All `TestingDojo` test files currently live in the root of `tests/CSharpPlaygrou
 ## Notes
 - Keep `docs/` for tutor rules, progress tracking, and workshop guidance.
 - Keep exercise tests at the project root unless the suite grows enough to justify subfolders.
+
+## Current dojo status
+- Level 1 to Level 3: covered with tests.
+- Level 4: `Slugify` and `GreetingService.BuildGreeting` covered. `NextBusinessDay` still pending.
+- Level 5: `AddItem`, `RemoveItem`, `ApplyPercentDiscount`, and `GetSubtotal` covered. `GetTotal` and `Clear` still pending.
+- Level 6: `InvoiceNotifier.NotifyOverdueInvoices` has an initial suite covering paid, unpaid/overdue, below-threshold, and exact-threshold paths. Guard-clause tests are still pending.
+
+## Next work
+- Add `TextDateChallenge.NextBusinessDay` tests.
+- Add `CartService.GetTotal` tests.
+- Add `CartService.Clear` tests.
+- Complete `InvoiceNotifier.NotifyOverdueInvoices` guard-clause coverage:
+- `null` invoices should throw `ArgumentNullException`.
+- threshold `0` should throw `ArgumentOutOfRangeException`.
+- negative threshold should throw `ArgumentOutOfRangeException`.

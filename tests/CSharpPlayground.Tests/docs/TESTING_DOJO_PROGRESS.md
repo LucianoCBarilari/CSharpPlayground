@@ -29,8 +29,15 @@
 - [ ] CartService.Clear
 
 ## Level 6
-- [ ] InvoiceNotifier.NotifyOverdueInvoices
-- verify interaction count and arguments on collaborators
+- [~] InvoiceNotifier.NotifyOverdueInvoices
+- [x] verify interaction count and arguments on collaborators
+- [x] paid invoice is skipped
+- [x] unpaid overdue invoice is notified
+- [x] below-threshold invoice is skipped
+- [x] exact-threshold invoice is notified
+- [ ] null invoices throws `ArgumentNullException`
+- [ ] threshold `0` throws `ArgumentOutOfRangeException`
+- [ ] negative threshold throws `ArgumentOutOfRangeException`
 
 ## Level 7
 - [ ] ReportAssembler.BuildCourseReport
