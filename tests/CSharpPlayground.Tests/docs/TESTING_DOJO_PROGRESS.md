@@ -17,7 +17,7 @@
 
 ## Level 4
 - [x] TextDateChallenge.Slugify
-- [ ] TextDateChallenge.NextBusinessDay
+- [x] TextDateChallenge.NextBusinessDay
 - [x] GreetingService.BuildGreeting
 
 ## Level 5

@@ -33,12 +33,11 @@ All `TestingDojo` test files currently live in the root of `tests/CSharpPlaygrou
 
 ## Current dojo status
 - Level 1 to Level 3: covered with tests.
-- Level 4: `Slugify` and `GreetingService.BuildGreeting` covered. `NextBusinessDay` still pending.
+- Level 4: `Slugify`, `NextBusinessDay`, and `GreetingService.BuildGreeting` covered.
 - Level 5: `AddItem`, `RemoveItem`, `ApplyPercentDiscount`, and `GetSubtotal` covered. `GetTotal` and `Clear` still pending.
 - Level 6: `InvoiceNotifier.NotifyOverdueInvoices` has an initial suite covering paid, unpaid/overdue, below-threshold, and exact-threshold paths. Guard-clause tests are still pending.
 
 ## Next work
-- Add `TextDateChallenge.NextBusinessDay` tests.
 - Add `CartService.GetTotal` tests.
 - Add `CartService.Clear` tests.
 - Complete `InvoiceNotifier.NotifyOverdueInvoices` guard-clause coverage:
